@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.ukd Tattoo Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="overlay">
+            <h1>Welcome to 2.ukd</h1>
+            <p>Where art meets skin and every design tells a story! My studio is a space where creativity, professionalism, and passion come together to craft one-of-a-kind tattoos that reflect your individuality.</p>
+            <a href="https://www.instagram.com/2.ukd?igsh=MWF3NGoxaTU0eHh3bA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+            <a href="mailto:valeriakryvenko777@gmail.com">Email</a>
+        </div>
+    </header>
+
+    <section class="gallery">
+        <h2>My Work</h2>
+        <div class="carousel">
+            <button id="prev">&#10094;</button>
+            <div class="image-container">
+                <img src="/Users/valeriakryvenko/Downloads/IMG_2757 2.JPG" alt="Tattoo 1">
+                <img src="/Users/valeriakryvenko/Downloads/IMG_2056.JPG" alt="Tattoo 2">
+                <img src="/Users/valeriakryvenko/Downloads/IMG_1782 2.JPG" alt="Tattoo 3">
+                <img src="image4.png" alt="Tattoo 4">
+                <img src="image5.png" alt="Tattoo 5">
+            </div>
+            <button id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">How to book a session?</button>
+            <div class="faq-answer">You can book a session via <a href="https://www.instagram.com/2.ukd?igsh=MWF3NGoxaTU0eHh3bA%3D%3D&utm_source=qr">Instagram</a> or email <a href="mailto:valeriakryvenko777@gmail.com">valeriakryvenko777@gmail.com</a>.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How to prepare for a session?</button>
+            <div class="faq-answer">Make sure to get a good night's sleep, eat a meal, and stay hydrated.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Are there any contraindications for tattooing?</button>
+            <div class="faq-answer">Yes, including skin conditions, infections, or certain medical conditions. Consult a professional if unsure.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What is the aftercare?</button>
+            <div class="faq-answer">Keep the tattoo clean, avoid sun exposure, and follow detailed aftercare instructions provided at your session.</div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>Customer Feedback</h2>
+        <div class="review"><strong>Sasha I.:</strong> "Valeriia is an amazing artist! My tattoo turned out better than I imagined!"</div>
+        <div class="review"><strong>Sergey K.:</strong> "The whole experience was smooth and professional. Highly recommend!"</div>
+        <div class="review"><strong>Oleg O.:</strong> "Great atmosphere, incredible attention to detail. I will be back for more!"</div>
+    </section>
+</body>
+</html>
