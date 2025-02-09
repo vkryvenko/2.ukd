@@ -4,8 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2.ukd Tattoo Studio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00aaff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header.hero {
+            background: url('path-to-your-background-image.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        header .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        header a {
+            background-color: #00aaff;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        header a:hover {
+            background-color: #0077cc;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .carousel {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel .image-container {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            margin: 0 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel .image-container img {
+            max-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            background-color: #00aaff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #0077cc;
+        }
+
+        .faq-answer {
+            background-color: #f4f4f4;
+            padding: 15px;
+            display: none;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .review {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery h2 {
+                font-size: 1.8rem;
+            }
+
+            .carousel .image-container {
+                flex-direction: column;
+            }
+
+            .carousel button {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Carousel functionality
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel .image-container img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            // Make sure index is within bounds
+            if (index >= images.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = images.length - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            // Update the carousel images
+            images.forEach((img, idx) => {
+                img.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+        }
+
+        prevButton.addEventListener('click', () => showImage(currentIndex - 1));
+        nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+
+                // Toggle visibility of the answer
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </head>
 <body>
     <header class="hero">
