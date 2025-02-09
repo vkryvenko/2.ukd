@@ -7,198 +7,216 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <style>
-        /* Reset some default styles */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #fff;
             color: #333;
         }
-        h1, h2 {
-            color: #222;
-            margin-bottom: 1rem;
-        }
+
         a {
             text-decoration: none;
-            color: #00aaff;
+            color: #FF0099; /* Pink */
         }
         a:hover {
-            text-decoration: underline;
+            color: #222;
         }
+
+        /* Header Section */
         header.hero {
-            background: url('path-to-your-background-image.jpg') no-repeat center center/cover;
+            background: url('images/background.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px;
             position: relative;
+            background-position: center center;
+            background-attachment: fixed;
         }
+
         header .overlay {
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
+            padding: 40px 20px;
+            border-radius: 15px;
+            max-width: 650px;
             margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         header h1 {
-            font-size: 3rem;
+            font-size: 4rem;
+            font-weight: bold;
             margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
+
         header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
+            line-height: 1.6;
         }
+
         header a {
-            background-color: #00aaff;
-            padding: 10px 20px;
+            background-color: #FF0099; /* Pink */
+            padding: 15px 30px;
             color: white;
-            border-radius: 5px;
-            margin: 5px;
-            display: inline-block;
+            border-radius: 50px;
+            margin: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
         }
+
         header a:hover {
-            background-color: #0077cc;
+            background-color: #D5006D; /* Darker Pink */
         }
+
         /* Gallery Section */
         .gallery {
+            padding: 60px 20px;
+            background-color: #111;
+            color: white;
             text-align: center;
-            padding: 40px 20px;
         }
+
         .gallery h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
         }
+
         .carousel {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
+
         .carousel button {
             background-color: rgba(0, 0, 0, 0.5);
             border: none;
             color: white;
             font-size: 2rem;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .carousel button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .carousel .image-container {
             display: flex;
-            overflow: hidden;
-            width: 80%;
-            margin: 0 20px;
+            transition: transform 0.5s ease;
         }
+
         .carousel img {
             width: 100%;
             height: auto;
-            transition: transform 0.5s ease;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
-        .carousel .image-container img {
-            max-width: 100%;
-            transition: transform 0.5s ease;
-        }
+
         /* FAQ Section */
         .faq {
-            padding: 40px 20px;
-            background-color: #f9f9f9;
+            padding: 60px 20px;
+            background-color: #fff;
+            color: #333;
         }
+
+        .faq h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #FF0099; /* Pink */
+        }
+
         .faq-item {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+
         .faq-question {
-            background-color: #00aaff;
+            background-color: #FF0099; /* Pink */
             color: white;
-            padding: 15px;
+            padding: 18px;
             width: 100%;
             text-align: left;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: background-color 0.3s;
         }
+
         .faq-question:hover {
-            background-color: #0077cc;
+            background-color: #D5006D; /* Darker Pink */
         }
+
         .faq-answer {
             background-color: #f4f4f4;
-            padding: 15px;
+            padding: 18px;
             display: none;
             border: 1px solid #ddd;
-            margin-top: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
         }
+
         /* Reviews Section */
         .reviews {
-            padding: 40px 20px;
-            background-color: #fff;
+            padding: 60px 20px;
+            background-color: #111;
+            color: white;
             text-align: center;
         }
+
+        .reviews h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
         .review {
             margin-bottom: 20px;
             font-style: italic;
+            font-size: 1.2rem;
+            color: #FF0099; /* Pink */
         }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
-            .gallery h2 {
-                font-size: 1.8rem;
-            }
+
             .carousel .image-container {
                 flex-direction: column;
             }
+
             .carousel button {
                 font-size: 1.5rem;
             }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
         }
     </style>
-    <script>
-        // Carousel functionality
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        const images = document.querySelectorAll('.carousel .image-container img');
-        let currentIndex = 0;
-        function showImage(index) {
-            // Make sure index is within bounds
-            if (index >= images.length) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = images.length - 1;
-            } else {
-                currentIndex = index;
-            }
-            // Update the carousel images
-            images.forEach((img, idx) => {
-                img.style.transform = `translateX(-${currentIndex * 100}%)`;
-            });
-        }
-        prevButton.addEventListener('click', () => showImage(currentIndex - 1));
-        nextButton.addEventListener('click', () => showImage(currentIndex + 1));
-        // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                // Toggle visibility of the answer
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
 </head>
 <body>
+
     <header class="hero">
         <div class="overlay">
             <h1>Welcome to 2.ukd</h1>
-            <p>Where art meets skin and every design tells a story! My studio is a space where creativity, professionalism, and passion come together to craft one-of-a-kind tattoos that reflect your individuality.</p>
-            <a href="https://www.instagram.com/2.ukd?igsh=MWF3NGoxaTU0eHh3bA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+            <p>Where art meets skin and every design tells a story. My studio is a space where creativity, professionalism, and passion come together to craft one-of-a-kind tattoos that reflect your individuality.</p>
+            <a href="https://www.instagram.com/2.ukd" target="_blank">Instagram</a>
             <a href="mailto:valeriakryvenko777@gmail.com">Email</a>
         </div>
     </header>
@@ -208,11 +226,11 @@
         <div class="carousel">
             <button id="prev">&#10094;</button>
             <div class="image-container">
-                <img src="/Users/valeriakryvenko/Downloads/IMG_2757 2.JPG" alt="Tattoo 1">
-                <img src="/Users/valeriakryvenko/Downloads/IMG_2056.JPG" alt="Tattoo 2">
-                <img src="/Users/valeriakryvenko/Downloads/IMG_1782 2.JPG" alt="Tattoo 3">
-                <img src="image4.png" alt="Tattoo 4">
-                <img src="image5.png" alt="Tattoo 5">
+                <img src="images/IMG_2757_2.JPG" alt="Tattoo 1">
+                <img src="images/IMG_2056.JPG" alt="Tattoo 2">
+                <img src="images/IMG_1782_2.JPG" alt="Tattoo 3">
+                <img src="images/image4.png" alt="Tattoo 4">
+                <img src="images/image5.png" alt="Tattoo 5">
             </div>
             <button id="next">&#10095;</button>
         </div>
@@ -222,7 +240,7 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <button class="faq-question">How to book a session?</button>
-            <div class="faq-answer">You can book a session via <a href="https://www.instagram.com/2.ukd?igsh=MWF3NGoxaTU0eHh3bA%3D%3D&utm_source=qr">Instagram</a> or email <a href="mailto:valeriakryvenko777@gmail.com">valeriakryvenko777@gmail.com</a>.</div>
+            <div class="faq-answer">You can book a session via <a href="https://www.instagram.com/2.ukd">Instagram</a> or email <a href="mailto:valeriakryvenko777@gmail.com">valeriakryvenko777@gmail.com</a>.</div>
         </div>
         <div class="faq-item">
             <button class="faq-question">How to prepare for a session?</button>
@@ -244,5 +262,37 @@
         <div class="review"><strong>Sergey K.:</strong> "The whole experience was smooth and professional. Highly recommend!"</div>
         <div class="review"><strong>Oleg O.:</strong> "Great atmosphere, incredible attention to detail. I will be back for more!"</div>
     </section>
+
+    <script>
+        // Carousel functionality
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel .image-container img');
+        let currentIndex = 0;
+        function showImage(index) {
+            if (index >= images.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = images.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            images.forEach((img, idx) => {
+                img.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+        }
+        prevButton.addEventListener('click', () => showImage(currentIndex - 1));
+        nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
 </body>
 </html>
